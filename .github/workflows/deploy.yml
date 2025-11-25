@@ -21,4 +21,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./      # your project root
           server-dir: /htdocs/
-          security: insecure
+          security: loose
