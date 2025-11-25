@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 name: Deploy bgauss-app to InfinityFree
-=======
-name: Deploy to InfinityFree
->>>>>>> a6a31ddc3196e3b9d0b8d4db22dd62553ca0f27b
 
 on:
   push:
@@ -23,11 +19,6 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-<<<<<<< HEAD
           local-dir: ./  
           server-dir: /htdocs  
           git-ftp-args: --insecure
-=======
-          local-dir: ./ 
-          server-dir: /htdocsgit add .github/workflows/deploy.yml
->>>>>>> a6a31ddc3196e3b9d0b8d4db22dd62553ca0f27b
