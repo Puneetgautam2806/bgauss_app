@@ -1,24 +1,24 @@
-name: Deploy bgauss-app to InfinityFree
+name: Deploy bgauss-app to bgauss.gt.tc
 
 on:
   push:
     branches:
-      - main
+      - main  # deploy on pushes to main branch
 
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: FTP Deploy to InfinityFree
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy to InfinityFree (bgauss.gt.tc)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./  
-          server-dir: /htdocs  
-          git-ftp-args: --insecure
+          local-dir: ./      # your project root
+          server-dir: /htdocs/
+          security: insecure
